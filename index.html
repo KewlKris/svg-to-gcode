@@ -2,9 +2,57 @@
 <html>
     <head>
         <title>SVG to G-Code</title>
+        <link rel="stylesheet" href="./css/index.css">
     </head>
     <body>
-        Hello!
+        <div id="container-div">
+            <div id="preview-div">
+            </div>
+            <div id="settings-div">
+                <div id="settings-column">
+                    <div id="settings-title" class="settings-borders">
+                        <div id="title-text">SVG to G-Code<br>Converter</div>
+                        <div id="reset-button" title="Reset defaults">⟳</div>
+                    </div>
+                    <div class="settings-divider"></div>
+                    <div class="settings-header settings-borders">SVG File</div>
+                    <div id="file-div" class="settings-borders">
+                        <input type="file" accept=".svg" id="file-input">
+                    </div>
+                    <div class="settings-divider"></div>
+                    <div class="settings-header settings-borders">File Info</div>
+                    <div id="svg-info" class="settings-table">
+                        <div><span>Bed Dimensions:</span><span id="info-dimensions" class="value">?</span></div>
+                        <div><span>Path Count:</span><span id="info-pathCount" class="value">?</span></div>
+                    </div>
+                    <div class="settings-divider"></div>
+                    <div class="settings-header settings-borders">Main Settings</div>
+                    <div id="main-settings" class="settings-table">
+                        <div><span>Draw Height:</span><input id="setting-drawHeight" type="number" step="0.1" min="0.0"><span class="unit">mm</span></div>
+                        <div><span>Pen Size:</span><input id="setting-penSize" type="number" step="0.1" min="0.0"><span class="unit">mm</span></div>
+                        <div><span>Pen Offset X:</span><input id="setting-penOffsetX" type="number" step="1" value="0"><span class="unit">mm</span></div>
+                        <div><span>Pen Offset Y:</span><input id="setting-penOffsetY" type="number" step="1" value="0"><span class="unit">mm</span></div>
+                        <div><span>Flip X:</span><input id="setting-flipX" type="checkbox"></div>
+                        <div><span>Flip Y:</span><input id="setting-flipY" type="checkbox"></div>
+                    </div>
+                    <div class="settings-divider"></div>
+                    <div class="settings-header settings-borders">Extra Settings</div>
+                    <div id="extra-settings" class="settings-table">
+                        <div><span>Lift Amount:</span><input id="setting-liftAmount" type="number" step="0.1" min="0.0"><span class="unit">mm</span></div>
+                        <div><span>Travel Lift Amount:</span><input id="setting-travelLiftAmount" type="number" step="0.1" min="0.0"><span class="unit">mm</span></div>
+                        <div><span>Fill Overlap:</span><input id="setting-fillOverlap" type="number" step="1" min="0.0"><span class="unit">%</span></div>
+                        <div><span>Acceleration X:</span><input id="setting-accelerationX" type="number" step="1" min="0.0"><span class="unit">mm</span></div>
+                        <div><span>Acceleration Y:</span><input id="setting-accelerationY" type="number" step="1" min="0.0"><span class="unit">mm</span></div>
+                        <div><span>Acceleration Z:</span><input id="setting-accelerationZ" type="number" step="1" min="0.0"><span class="unit">mm</span></div>
+                        <div><span>Jerk X:</span><input id="setting-jerkX" type="number" step="1" min="0.0"><span class="unit">mm</span></div>
+                        <div><span>Jerk Y:</span><input id="setting-jerkY" type="number" step="1" min="0.0"><span class="unit">mm</span></div>
+                        <div><span>Jerk Z:</span><input id="setting-jerkZ" type="number" step="1" min="0.0"><span class="unit">mm</span></div>
+                    </div>
+                </div>
+                <div id="generate-button"><span id="generate-button-text">Generate</span></div>
+            </div>
+        </div>
+
         <script src="./js/index.js" type="module"></script>
     </body>
 </html>

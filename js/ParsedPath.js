@@ -317,9 +317,6 @@ class ParsedPath {
 
             // If a command was found, reset the state
             if (pathCommand) {
-                console.log('Got command!');
-                console.log(pathCommand);
-
                 // Reset state
                 this.#state.previousCommand = this.#state.command;
                 this.#state.previousPathCommand = pathCommand;

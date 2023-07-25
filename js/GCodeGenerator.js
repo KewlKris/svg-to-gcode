@@ -160,7 +160,6 @@ class GCodeGenerator {
                 previousFillCount = fillCount;
                 currentFillRegions = Array(fillCount);
                 for (let i=0; i<currentFillRegions.length; i++) currentFillRegions[i] = [];
-                console.log('Starting with fill count: ' + fillCount);
             } else if (previousFillCount != fillCount) {
                 // Fill count changed! Complete current fill regions
                 completeFillRegions.push(...currentFillRegions);
@@ -168,7 +167,6 @@ class GCodeGenerator {
                 for (let i=0; i<currentFillRegions.length; i++) currentFillRegions[i] = [];
                 previousFillCount = fillCount;
                 goingForward = true;
-                console.log('Moving to fill count: ' + fillCount);
             }
 
             // Add the fill lines to the current fill regions
